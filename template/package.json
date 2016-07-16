@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "{{ description }}",
   "scripts": {
-    "start": "webpack-dev-server --content-base build/ --history-api-fallback --hot --inline",
-    "release": "rm -rf build; webpack --config webpack.config.prod.js"
+    "start": "webpack-dev-server --content-base build/ {{#if html5Mode}}--history-api-fallback{{/if}} --hot --inline",
+    "release": "rm -rf dist; webpack --config webpack.config.prod.js"
   },
   "author": "{{ username }} {{#if email}}{{ email }}{{/if}}",
   "license": "MIT",
