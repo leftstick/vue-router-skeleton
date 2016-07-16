@@ -1,12 +1,12 @@
 {
-  "name": "<%= answers.name %>",
+  "name": "{{ name }}",
   "version": "1.0.0",
-  "description": "<%= answers.description %>",
+  "description": "{{ description }}",
   "scripts": {
     "start": "webpack-dev-server --content-base build/ --history-api-fallback --hot --inline",
     "release": "rm -rf build; webpack --config webpack.config.prod.js"
   },
-  "author": "<%= answers.username %> <% if(answers.email){ %><<%= answers.email %>><% } %>",
+  "author": "{{ username }} {{#if email}}{{ email }}{{/if}}",
   "license": "MIT",
   "dependencies":{
     "vue": "^1.0.26",

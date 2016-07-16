@@ -18,6 +18,11 @@ module.exports = {
             message: 'Author',
             default: process.env.USER || process.env.USERPROFILE.split(require('path').sep)[2]
         },
+        email: {
+            type: 'string',
+            required: false,
+            message: 'Author email'
+        },
         html5Mode: {
             type: 'confirm',
             message: 'Use html5 mode',
