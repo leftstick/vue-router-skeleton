@@ -17,7 +17,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: 'style/useable!postcss!css'
+                loader: 'style/useable!css!postcss'
             },
             {
                 test: /\.vue$/,
@@ -38,7 +38,7 @@ module.exports = {
     vue: {
         loaders: {
             js: 'babel?{"presets":["es2015"]}',
-            css: 'vue-style!postcss!css'
+            css: 'vue-style!css!postcss'
         }
     },
     postcss: function() {

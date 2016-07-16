@@ -15,7 +15,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: 'style/useable!postcss!css'
+                loader: 'style/useable!css!postcss'
             },
             {
                 test: /\.vue$/,
@@ -29,7 +29,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style/useable!postcss!css'
+                loader: 'style/useable!css!postcss'
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg)\w*/,
