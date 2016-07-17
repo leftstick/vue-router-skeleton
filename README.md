@@ -57,7 +57,7 @@ Open [http://localhost:8080](http://localhost:8080) to watch the released versio
 
 ## More read ##
 
-Looking for detail? Check it [here](https://github.com/leftstick/vue-router-skeleton/blob/master/docs/api.md)
+Looking for detail? Check it [here](https://github.com/leftstick/vue-router-skeleton/blob/master/docs/qa.md)
 
 
 
