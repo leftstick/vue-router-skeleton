@@ -12,10 +12,7 @@
 
         <todo-demo></todo-demo>
 
-        <div id="footer">
-            <p>Released under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT License</a></p>
-            <p>Copyright (c) 2016 <a href="https://github.com/leftstick" target="_blank">Howard.Zuo</a></p>
-        </div>
+        <home-footer></home-footer>
     </div>
 </template>
 
@@ -23,13 +20,14 @@
 import logo from './components/logo';
 import badge from './components/badge';
 import todoDemo from './components/todoDemo';
+import homeFooter from './components/homeFooter';
 
 export default {
 
     created: function() {
     },
 
-    components: {logo, badge, todoDemo}
+    components: {logo, badge, todoDemo, homeFooter}
 }
 </script>
 

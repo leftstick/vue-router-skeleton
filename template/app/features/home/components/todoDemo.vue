@@ -17,6 +17,7 @@
         <a href="" class="archive" :disabled="remaining === todos.length" @click.prevent.stop="archive">archive</a>
     </div>
 </template>
+
 <script>
 export default {
     data() {
@@ -41,6 +42,7 @@ export default {
     }
 };
 </script>
+
 <style scoped>
 #todo-app{
     width: 250px;

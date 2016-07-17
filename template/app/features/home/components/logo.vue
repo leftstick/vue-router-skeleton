@@ -4,11 +4,13 @@
           <h2>vue-router-skeleton</h2>
     </div>
 </template>
+
 <script>
 export default {
 
 };
 </script>
+
 <style scoped>
 
 </style>
