@@ -63,10 +63,10 @@ Looking for detail? Check it [here](https://github.com/leftstick/vue-router-skel
 
 ## LICENSE ##
 
-[MIT License](https://raw.githubusercontent.com/leftstick/generator-es6-angular/master/LICENSE)
+[MIT License](https://raw.githubusercontent.com/leftstick/vue-router-skeleton/master/LICENSE)
 
 
 
 
 [david-url]: https://david-dm.org/leftstick/vue-router-skeleton.png
-[license-url]:https://img.shields.io/npm/l/vue-router-skeleton.svg
+[license-url]: https://img.shields.io/github/license/leftstick/vue-router-skeleton.svg
