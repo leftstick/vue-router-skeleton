@@ -21,7 +21,10 @@ module.exports = {
         email: {
             type: 'string',
             required: false,
-            message: 'Author email'
+            message: 'Author email',
+            validate: function(val) {
+                return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(val);
+            }
         },
         html5Mode: {
             type: 'confirm',
