@@ -1,7 +1,7 @@
 <template>
     <div id="github">
-        <iframe src="http://ghbtns.com/github-btn.html?user=leftstick&repo=vue-router-skeleton&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
-        <iframe src="http://ghbtns.com/github-btn.html?user=leftstick&repo=vue-router-skeleton&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=leftstick&repo=vue-router-skeleton&type=star&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=leftstick&repo=vue-router-skeleton&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
     </div>
 </template>
 

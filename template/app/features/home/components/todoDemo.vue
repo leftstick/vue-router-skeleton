@@ -3,13 +3,13 @@
         <h3>Simple TODO app</h3>
         <input type="text" placeholder="Typing here..." @keyup.enter="addTodo">
 
-        <span>{{ remaining }} of {{ todos.length }} remaining</span>
+        <span>\{{ remaining }} of \{{ todos.length }} remaining</span>
 
         <ul class="todos">
             <li v-for="todo of todos">
                 <input type="checkbox" v-model="todo.finished">
                 <span :style="{'text-decoration': todo.finished ? 'line-through' : 'none'}">
-                    {{ todo.txt }}
+                    \{{ todo.txt }}
                 </span>
             </li>
         </ul>
