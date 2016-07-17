@@ -1,6 +1,6 @@
 {
   "name": "vue-router-skeleton",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "description": "A dead simple webpack + vue-loader setup with vue-router involved"
 }

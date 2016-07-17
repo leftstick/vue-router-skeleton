@@ -1,14 +1,15 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import {Splash} from 'splash-screen';
 import rootApp from './rootApp';
-
+import ext from './ext/main';
 import Routes from './features/Routes';
 
 class App {
 
-    constructor() {
-        Vue.use(VueRouter);
+    constructor() { }
+
+    registerExts() {
+        ext();
     }
 
     createApplication() {
@@ -52,6 +53,7 @@ class App {
     }
 
     run() {
+        this.registerExts();
         this.createApplication();
         this.registerRouters();
         this.setDefaultPath();
