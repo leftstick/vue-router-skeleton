@@ -23,7 +23,7 @@ class App {
     }
 
     registerRouters() {
-        this.router = new VueRouter({history: {{ html5Mode }}{{#if html5Mode}}, root: '/'{{/if}} });
+        this.router = new VueRouter({history: {{ html5Mode }}{{#if html5Mode}}, root: '/', saveScrollPosition: true{{/if}} });
         this.router.map(Routes);
     }
 

@@ -28,10 +28,6 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
-                loader: 'style/useable!css!postcss'
-            },
-            {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg)\w*/,
                 loader: 'file'
             }
@@ -40,7 +36,7 @@ module.exports = {
     vue: {
         loaders: {
             js: 'babel?{"presets":["es2015"]}',
-            css: 'vue-style!postcss!css'
+            css: 'vue-style!css!postcss'
         }
     },
     postcss: function() {

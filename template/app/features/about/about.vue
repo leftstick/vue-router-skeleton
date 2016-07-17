@@ -11,8 +11,8 @@
         </div>
 
         <div id="more">
-            <a href="https://github.com/leftstick/vue-router-skeleton/blob/master/docs/api.md" target="_blank" class="button">
-                more read
+            <a href="https://github.com/leftstick/vue-router-skeleton/blob/master/docs/qa.md" target="_blank" class="button">
+                Read More
             </a>
         </div>
     </div>
@@ -37,18 +37,9 @@ export default { }
     background-color: #f7f7f9;
 }
 
-#why h4{
-    margin-top: 0;
-}
-
-#why ul li {
-    padding-top: 5px;
-}
-
 #more{
     width: 600px;
     margin: 30px auto 15px auto;
-    padding: 5px;
 }
 
 #more .button{
@@ -58,13 +49,13 @@ export default { }
     line-height: 35px;
     color: #fff;
     border-radius: 2px;
-    border-width: 0;
-    background-color: #FE2E2E;
-    box-shadow: 2px 2px 1px #a6120d;
+    background-color: #42b983;
+    box-shadow: 2px 2px 1px #399F71;
     transition: all 0.3s ease 0s;
+    text-decoration: none;
 }
 
 #more .button:hover{
-    box-shadow: 4px 4px 2px #a6120d;
+    box-shadow: 4px 4px 2px #226144;
 }
 </style>

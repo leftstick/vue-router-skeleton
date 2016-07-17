@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --content-base build/ {{#if html5Mode}}--history-api-fallback{{/if}} --hot --inline",
     "release": "rm -rf dist; webpack --config webpack.config.prod.js"
   },
-  "author": "{{ username }} {{#if email}}{{ email }}{{/if}}",
+  "author": "{{ author }} {{#if email}}{{ email }}{{/if}}",
   "license": "MIT",
   "dependencies":{
     "vue": "^1.0.26",
