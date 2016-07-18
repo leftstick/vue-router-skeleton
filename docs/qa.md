@@ -66,11 +66,11 @@ export default function() {
 `app/ext/plugins.js`
 
 ```javascript
-import vuex from './vuex';
+import loadVuex from './vuexLoader';
 
 export default function() {
 
-    let store = vuex();
+    let store = loadVuex();
 
     return {store};
 }
