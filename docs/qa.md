@@ -24,6 +24,58 @@ export default {'/home': {component: Home, isDefault: true}};
 
 The way pretty URLs - remove the `#`. The feature should be supported by both server and client. You will read more [manipulating history](http://diveintohtml5.info/history.html)
 
+## How to use plugins such as: `vuex` ##
+
+**Install plugin**
+
+```
+npm install vuex@0.8.2 --save
+```
+
+**Write loader**
+
+`vuexLoader.js`
+
+```javascript
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+const mutations = {
+    RESET(st, name) {
+        st.name = name;
+    }
+};
+
+const state = {
+    name: ''
+};
+
+export default function() {
+    Vue.use(Vuex);
+
+    return new Vuex.Store({
+        state,
+        mutations,
+        strict: process.env.NODE_ENV !== 'production'
+    });
+}
+```
+
+**return constructor fundamentals**
+
+`app/ext/plugins.js`
+
+```javascript
+import vuex from './vuex';
+
+export default function() {
+
+    let store = vuex();
+
+    return {store};
+}
+```
+
 ## References ##
 
 1. [vue](http://vuejs.org/)
