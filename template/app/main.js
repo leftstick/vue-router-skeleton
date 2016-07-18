@@ -1,26 +1,31 @@
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 import {Splash} from 'splash-screen';
 import rootApp from './rootApp';
-import ext from './ext/main';
+import plugins from './ext/plugins';
 import Routes from './features/Routes';
 
 class App {
 
-    constructor() { }
+    constructor() {
+        Vue.use(VueRouter);
+    }
 
     registerExts() {
-        ext();
+        this.plugins = plugins();
     }
 
     createApplication() {
-        this.app = Vue.extend({
+        var constructor = Object.assign({}, {
             el: function() {
                 return 'body';
             },
             components: {
                 rootApp
             }
-        });
+        }, this.plugins);
+
+        this.app = Vue.extend(constructor);
     }
 
     registerRouters() {

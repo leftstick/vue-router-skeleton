@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
     prompts: {
         name: {
@@ -23,6 +21,9 @@ module.exports = {
             required: false,
             message: 'Author email',
             validate: function(val) {
+                if (!val) {
+                    return true;
+                }
                 return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(val);
             }
         },
