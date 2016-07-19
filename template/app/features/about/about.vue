@@ -58,4 +58,10 @@ export default { }
 #more .button:hover{
     box-shadow: 4px 4px 2px #226144;
 }
+
+@media screen and (max-width: 600px) {
+    #why, #more{
+        width: 90%;
+    }
+}
 </style>
