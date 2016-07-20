@@ -17,9 +17,6 @@ class App {
 
     createApplication() {
         var constructor = Object.assign({}, {
-            el: function() {
-                return 'body';
-            },
             components: {
                 rootApp
             }
