@@ -17,7 +17,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
-                loader: 'style/useable!css!postcss'
+                loader: 'style/useable!css'
             },
             {
                 test: /\.vue$/,
