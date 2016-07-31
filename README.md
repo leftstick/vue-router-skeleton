@@ -5,7 +5,7 @@ A dead simple webpack + vue-loader setup with vue-router involved
 ![][david-url]
 ![][license-url]
 
-> You can view the online demo at: [http://leftstick.github.io/vue-router-skeleton](http://leftstick.github.io/vue-router-skeleton)
+> You can view the online demo at: [https://leftstick.github.io/vue-router-skeleton](https://leftstick.github.io/vue-router-skeleton)
 
 ## Prerequisites ##
 
