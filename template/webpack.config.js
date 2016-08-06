@@ -60,7 +60,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            inject: 'body',
+            inject: false,
             template: 'index.html_vm',
             favicon: 'img/favicon.ico',
             hash: false

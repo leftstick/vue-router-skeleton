@@ -9,5 +9,9 @@
 </head>
 <body>
     <root-app></root-app>
+    
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" async></script>
+    <% } %>
 </body>
 </html>
