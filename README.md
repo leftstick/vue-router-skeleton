@@ -60,6 +60,10 @@ Open [http://localhost:8080](http://localhost:8080) to watch the released versio
 Looking for detail? Check it [here](https://github.com/leftstick/vue-router-skeleton/blob/master/docs/qa.md)
 
 
+## Issues ##
+
+If you have problem while `npm start` on `windows7 OS`, you probably need to read [spawn error on startup (Windows 7)](https://github.com/FormidableLabs/webpack-dashboard/issues/57)
+
 
 ## LICENSE ##
 
