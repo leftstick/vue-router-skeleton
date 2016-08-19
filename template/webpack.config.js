@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
     entry: {
@@ -57,6 +58,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new DashboardPlugin(),
         new webpack.optimize.CommonsChunkPlugin('common.bundle.js'),
         new HtmlWebpackPlugin({
             filename: 'index.html',
