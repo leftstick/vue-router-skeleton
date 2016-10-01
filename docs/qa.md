@@ -17,19 +17,23 @@ You can easily add route to an exist `feature`.
 You can set a route as default one as following:
 
 ```javascript
-export default {'/home': {component: Home, isDefault: true}};
+export default {path: '/home', component: Home, isDefault: true};
 ```
 
-## What is `html5mode` ##
+## What is `mode` ##
 
-The way pretty URLs - remove the `#`. The feature should be supported by both server and client. You will read more [manipulating history](http://diveintohtml5.info/history.html)
+- `hash`: uses the URL hash for routing. Works in all Vue-supported browsers, including those that do not support HTML5 History API.
+- `history`: requires HTML5 History API and server config. See HTML5 History Mode.
+- `abstract`: works in all JavaScript environments, e.g. server-side with Node.js. The router will automatically be forced into this mode if no browser API is present.
+
+For more information, check it [here](http://router.vuejs.org/en/api/options.html)
 
 ## How to use plugins such as: `vuex` ##
 
 **Install plugin**
 
 ```
-npm install vuex@0.8.2 --save
+npm install vuex --save
 ```
 
 **Write loader**
@@ -41,38 +45,47 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 const mutations = {
-    RESET(st, name) {
-        st.name = name;
+    reset(state, name) {
+        state.name = name;
     }
 };
 
-const state = {
-    name: ''
+const getters = {name: state => state.name};
+
+const actions = {
+    reset({commit}) {
+        commit('reset', '');
+    }
 };
+
+const state = {name: 'fucking'};
 
 export default function() {
     Vue.use(Vuex);
 
-    return new Vuex.Store({
-        state,
-        mutations,
-        strict: process.env.NODE_ENV !== 'production'
-    });
+    return {
+        store: new Vuex.Store({
+            state,
+            actions,
+            getters,
+            mutations,
+            strict: process.env.NODE_ENV !== 'production'
+        })
+    };
 }
 ```
+
+>`mutations`, `getters`, `actions` and `state` shall be in separate modules for maintainability
 
 **return constructor fundamentals**
 
 `app/ext/plugins.js`
 
 ```javascript
-import loadVuex from './vuexLoader';
+import vuexLoader from './vuexLoader';
 
 export default function() {
-
-    let store = loadVuex();
-
-    return {store};
+    return Object.assign({}, vuexLoader());
 }
 ```
 
