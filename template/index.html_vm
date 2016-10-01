@@ -8,6 +8,8 @@
 
 </head>
 <body>
-    <root-app></root-app>
+    <div id="application">
+        <root-app></root-app>
+    </div>
 </body>
 </html>

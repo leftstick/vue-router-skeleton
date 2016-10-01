@@ -1,5 +1,5 @@
 # vue-router-skeleton
-A dead simple webpack + vue-loader setup with vue-router involved
+A dead simple webpack + vue-loader setup with vue-router involved. For `vue2`
 
 ![](https://img.shields.io/github/tag/leftstick/vue-router-skeleton.svg)
 ![][david-url]

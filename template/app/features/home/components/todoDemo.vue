@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         addTodo(e) {
-            this.todos.push({txt: e.target.value});
+            this.todos.push({txt: e.target.value, finished: false});
             e.target.value = '';
         },
 

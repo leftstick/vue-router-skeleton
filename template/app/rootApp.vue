@@ -2,10 +2,10 @@
     <div id="root">
         <ul class="header">
             <li>
-                <a v-link="{ path: '/home' }" class="nav-link">HOME</a>
+                <router-link :to="{ path: '/home' }" class="nav-link">HOME</router-link>
             </li>
             <li>
-                <a v-link="{ path: '/about' }" class="nav-link">ABOUT</a>
+                <router-link :to="{ path: '/about' }" class="nav-link">ABOUT</router-link>
             </li>
         </ul>
 
@@ -49,7 +49,7 @@ a{
     margin: 0 25px;
 }
 
-.nav-link.v-link-active {
+.nav-link.router-link-active {
     color: #000;
 }
 

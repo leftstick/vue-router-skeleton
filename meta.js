@@ -27,10 +27,11 @@ module.exports = {
                 return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(val);
             }
         },
-        html5Mode: {
-            type: 'confirm',
-            message: 'Use html5 mode',
-            default: false
+        mode: {
+            type: 'list',
+            message: 'mode',
+            choices: ['hash', 'history', 'abstract'],
+            default: 'hash'
         }
     },
     completeMessage: 'To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm start\n\nDocumentation can be found at https://github.com/leftstick/vue-router-skeleton'

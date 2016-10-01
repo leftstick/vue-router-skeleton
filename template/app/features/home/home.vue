@@ -3,7 +3,7 @@
         <logo></logo>
 
         <p id="desc">
-            A dead simple <code>webpack</code> + <code>vue-loader</code> setup with <code>vue-router</code> involved, including full featured dev/release process<br/><br/>
+            A dead simple <code>webpack</code> + <code>vue-loader</code> setup with <code>vue-router</code> involved(for <code>vue2</code>), including full featured dev/release process<br/><br/>
             Very welcome to give me feedbacks! <br/><br/>
             Stars would be the best^^!!
         </p>

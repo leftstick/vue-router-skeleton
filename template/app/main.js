@@ -15,29 +15,34 @@ class App {
         this.plugins = plugins();
     }
 
-    createApplication() {
-        var constructor = Object.assign({}, {
-            components: {
-                rootApp
-            }
-        }, this.plugins);
-
-        this.app = Vue.extend(constructor);
-    }
-
-    registerRouters() {
-        this.router = new VueRouter({history: {{ html5Mode }}{{#if html5Mode}}, root: '/', saveScrollPosition: true{{/if}} });
-        this.router.map(Routes);
+    createVueOpts() {
+        this.vueOps = Object.assign({}, {components: {rootApp}}, this.plugins);
     }
 
     setDefaultPath() {
-        var defaultPaths = Object
-            .keys(Routes)
-            .filter(path => Routes[path].isDefault);
+        var defaultPaths = Routes
+            .filter(route => route.isDefault)
+            .map(route => route.path);
         if (!defaultPaths.length) {
-            defaultPaths = [Object.keys(Routes)[0]];
+            defaultPaths = [Routes[0].path];
         }
-        this.router.redirect({'*': defaultPaths[0]});
+        this.defaultPaths = [{
+            path: '*',
+            redirect: defaultPaths[0]
+        }];
+    }
+
+    registerRouters() {
+        this.router = new VueRouter({
+            routes: Routes.concat(this.defaultPaths),
+            mode: '{{ mode }}',
+            scrollBehavior: function(to, from, savedPosition) {
+                return savedPosition || {x: 0, y: 0};
+            }
+        });
+        this.vueOps = Object.assign({}, this.vueOps, {
+            router: this.router
+        });
     }
 
     destroySplash() {
@@ -51,14 +56,14 @@ class App {
     }
 
     launch() {
-        this.router.start(this.app, 'body');
+        new Vue(this.vueOps).$mount('#application');
     }
 
     run() {
         this.registerExts();
-        this.createApplication();
-        this.registerRouters();
+        this.createVueOpts();
         this.setDefaultPath();
+        this.registerRouters();
         this.destroySplash();
         this.launch();
     }
