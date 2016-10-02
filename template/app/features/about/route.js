@@ -1,3 +1,3 @@
 import About from './about';
 
-export default {path: '/about', component: About};
+export default [{path: '/about',component: About}];

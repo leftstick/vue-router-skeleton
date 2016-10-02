@@ -10,14 +10,14 @@ Minimize first load script with a spinner displayed. Once the main functional sc
 
 ## How to add new route ##
 
-You will find a `Routes.js` under "features" folder, All routes collected from each feature and return a merged `Object`.
+You will find a `Routes.js` under "features" folder, All routes collected from each feature and return a merged `Array`.
 
 You can easily add route to an exist `feature`.
 
-You can set a route as default one as following:
+You can set a route as default fallback page with attribute `isDefault`:
 
 ```javascript
-export default {path: '/home', component: Home, isDefault: true};
+export default [{path: '/home', component: Home, isDefault: true}];
 ```
 
 ## What is `mode` ##
@@ -36,7 +36,7 @@ For more information, check it [here](http://router.vuejs.org/en/api/options.htm
 npm install vuex --save
 ```
 
-**Write loader**
+**Write loader for it**
 
 `vuexLoader.js`
 
@@ -77,7 +77,7 @@ export default function() {
 
 >`mutations`, `getters`, `actions` and `state` shall be in separate modules for maintainability
 
-**return constructor fundamentals**
+**import vuexLoader to ext/plugins.js**
 
 `app/ext/plugins.js`
 
@@ -88,6 +88,27 @@ export default function() {
     return Object.assign({}, vuexLoader());
 }
 ```
+
+**start using**
+
+```javascript
+import { mapActions, mapGetters } from 'vuex';
+
+export default {
+    computed: {
+        ...mapGetters([
+            'name'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'reset' // map this.reset() to this.$store.dispatch('reset')
+        ])
+  }
+};
+```
+
+>object spread operator is supported via [babel-plugin-transform-object-rest-spread](https://babeljs.io/docs/plugins/transform-object-rest-spread/), and it is configured in this skeleton
 
 ## References ##
 
