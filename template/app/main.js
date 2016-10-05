@@ -9,6 +9,7 @@ class App {
 
     constructor() {
         Vue.use(VueRouter);
+        Vue.config.devtools = process.env.NODE_ENV !== 'production';
     }
 
     registerExts() {
