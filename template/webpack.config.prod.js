@@ -1,7 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -12,44 +12,47 @@ module.exports = {
         filename: '[name].[hash].bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.css$/,
-                loader: 'style/useable!css'
+                use: ['style-loader/useable','css-loader']
             },
             {
                 test: /\.vue$/,
-                loader: 'vue',
+                use: [{
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            js: 'babel-loader?{"presets":[["es2015", {"modules": false}]],"plugins": ["transform-object-rest-spread"]}',
+                            css: 'vue-style-loader!css-loader!postcss-loader'
+                        }
+                    }
+                }],
                 exclude: /node_modules/
             },
             {
                 test: /\.js$/,
-                loader: 'babel?{"presets":["es2015"],"plugins": ["transform-object-rest-spread"]}',
+                use: [{
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [['es2015', {modules: false}]],
+                        plugins: ['transform-object-rest-spread']
+                    }
+                }],
                 exclude: /node_modules/
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg)\w*/,
-                loader: 'file'
+                use: ['file-loader']
             }
         ]
     },
-    vue: {
-        loaders: {
-            js: 'babel?{"presets":["es2015"],"plugins": ["transform-object-rest-spread"]}',
-            css: 'vue-style!css!postcss'
-        }
-    },
-    postcss: function() {
-        return [
-            autoprefixer({browsers: ['last 5 versions']})
-        ];
-    },
     resolve: {
-        root: [
+        modules: [
+            path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname)
         ],
         extensions: [
-            '',
             '.js',
             '.vue'
         ],
